@@ -15,7 +15,7 @@ interface FormValue {
 }
 
 function ChatPage({ version }: { version: string }) {
-  const showToolsV1 = true
+  const showToolsV1 = false
   const [personas, setPersonas] = useState<Persona[]>([]);
 
   const [formValue, setFormValue] = useState<FormValue>({
