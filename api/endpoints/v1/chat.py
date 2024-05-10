@@ -5,7 +5,7 @@ from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_core.runnables.history import RunnableWithMessageHistory
 
 from memory.session_memory import SessionMemory
-from tools.aurora_forecast import aurora_forecast
+from tools.aurora_forecast import load_aurora_forecast_tool
 from tools.employee_handbook import load_employee_handbook_tool
 from tools.weather import load_weather_tool
 from tools.tool_template import load_tool as load_pig_latin_tool
@@ -32,7 +32,7 @@ def chat_with_persona(body: Chat):
     tools.append(TavilySearchResults(max_results=1))
     tools.append(load_employee_handbook_tool())
     tools.append(load_pig_latin_tool())
-    tools.append(aurora_forecast())
+    tools.append(load_aurora_forecast_tool())
 
 
     # Agents
